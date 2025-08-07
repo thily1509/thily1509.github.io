@@ -6,6 +6,11 @@ appnexus.com, 11450, RESELLER, f5ab79cb980f11d1
 indexexchange.com, 194974, RESELLER, 50b1c356f2c5c8fc
 appnexus.com, 12941, RESELLER, f5ab79cb980f11d1
 appnexus.com, 12752, RESELLER, f5ab79cb980f11d1
+pangleglobal.com, Account ID, DIRECT
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
+
+
+pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
 appnexus.com, 12969, RESELLER, f5ab79cb980f11d1
 appnexus.com, 13293, RESELLER, f5ab79cb980f11d1
 contextweb.com, 562794, RESELLER, 89ff185a4c4e857c
