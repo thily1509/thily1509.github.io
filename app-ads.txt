@@ -8,7 +8,7 @@ appnexus.com, 12941, RESELLER, f5ab79cb980f11d1
 appnexus.com, 12752, RESELLER, f5ab79cb980f11d1
 pangleglobal.com, 61184, DIRECT
 pubmatic.com, 161490, RESELLER, 5d62403b186f2ace
-
+google.com, pub-9296372483561531, DIRECT, f08c47fec0942fa0
 vungle.com,5fec4e61219cd5001532e753,DIRECT,c107d686becd2d77
 33across.com,001Pg0000197KcKIAU,RESELLER,bbea06d9c4d2853c
 Contextweb.com,562852,RESELLER,89ff185a4c4e857c
