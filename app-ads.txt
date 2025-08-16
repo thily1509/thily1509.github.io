@@ -1,5 +1,7 @@
 google.com, pub-7171269809080077, DIRECT, f08c47fec0942fa0
 toponad.com, 16385e313a271a, RESELLER, 1d49fe424a1a456d
+google.com, pub-7171269809080077, DIRECT, f08c47fec0942fa0
+google.com, pub-1801408216613473, DIRECT, f08c47fec0942fa0
 vidoomy.com, 7646534, RESELLER
 indexexchange.com, 191497, RESELLER, 50b1c356f2c5c8fc
 appnexus.com, 11450, RESELLER, f5ab79cb980f11d1
