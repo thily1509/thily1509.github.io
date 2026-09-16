@@ -1,545 +1,527 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="AI Clean Up: Smart Storage - An Android application by LKY Studio to help manage and clean up your device storage efficiently.">
+    <meta name="theme-color" content="#0b0d12">
 
-<meta name="description" content="LKY Studio is an Android app developer creating simple, useful and enjoyable mobile applications for Google Play.">
-<meta name="theme-color" content="#0b0d12">
+    <!-- Cập nhật Title bao gồm cả tên App và tên Studio -->
+    <title>AI Clean Up: Smart Storage | LKY Studio</title>
 
-<title>LKY Studio | Android App Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    :root {
-        --bg: #090b10;
-        --bg-secondary: #0e1118;
-        --card: rgba(255, 255, 255, 0.045);
-        --border: rgba(255, 255, 255, 0.09);
-        --text: #f5f7fa;
-        --muted: #969daa;
-        --accent: #7c5cff;
-        --accent-light: #a18aff;
-        --green: #3ddc84;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        min-height: 100vh;
-        font-family: "Inter", sans-serif;
-        color: var(--text);
-        background:
-            radial-gradient(
-                circle at 50% -10%,
-                rgba(124, 92, 255, 0.22),
-                transparent 42%
-            ),
-            radial-gradient(
-                circle at 90% 80%,
-                rgba(61, 220, 132, 0.06),
-                transparent 35%
-            ),
-            var(--bg);
-        line-height: 1.6;
-    }
-
-    a {
-        color: inherit;
-    }
-
-    /* Header */
-
-    header {
-        width: 100%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        background: rgba(9, 11, 16, 0.72);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-    }
-
-    .nav {
-        max-width: 1100px;
-        margin: auto;
-        height: 72px;
-        padding: 0 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .brand {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        text-decoration: none;
-        font-size: 1.05rem;
-        font-weight: 700;
-        letter-spacing: -0.3px;
-    }
-
-    .brand-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 11px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 800;
-        font-size: 16px;
-        color: white;
-        background: linear-gradient(135deg, #7c5cff, #5540d9);
-        box-shadow: 0 7px 25px rgba(124, 92, 255, 0.25);
-    }
-
-    .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 28px;
-    }
-
-    .nav-links a {
-        color: var(--muted);
-        text-decoration: none;
-        font-size: 0.88rem;
-        font-weight: 500;
-        transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-        color: white;
-    }
-
-    /* Main */
-
-    main {
-        max-width: 1100px;
-        margin: auto;
-        padding: 0 24px;
-    }
-
-    .hero {
-        min-height: 620px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        position: relative;
-    }
-
-    .hero-content {
-        max-width: 760px;
-        padding: 80px 0;
-    }
-
-    .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 14px;
-        border-radius: 50px;
-        background: rgba(124, 92, 255, 0.09);
-        border: 1px solid rgba(124, 92, 255, 0.22);
-        color: #b9adff;
-        font-size: 0.78rem;
-        font-weight: 600;
-        margin-bottom: 25px;
-    }
-
-    .badge-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: var(--green);
-        box-shadow: 0 0 12px rgba(61, 220, 132, 0.7);
-    }
-
-    h1 {
-        font-size: clamp(3rem, 8vw, 5.5rem);
-        line-height: 1;
-        letter-spacing: -4px;
-        font-weight: 800;
-        margin-bottom: 26px;
-    }
-
-    .gradient-text {
-        background: linear-gradient(
-            135deg,
-            #ffffff 15%,
-            #a18aff 55%,
-            #7c5cff 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .hero-description {
-        max-width: 620px;
-        margin: auto;
-        color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.8;
-    }
-
-    .hero-buttons {
-        margin-top: 34px;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        flex-wrap: wrap;
-    }
-
-    .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 9px;
-        padding: 13px 21px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-size: 0.88rem;
-        font-weight: 600;
-        transition: all 0.2s ease;
-    }
-
-    .button-primary {
-        background: var(--accent);
-        color: white;
-        box-shadow: 0 10px 30px rgba(124, 92, 255, 0.2);
-    }
-
-    .button-primary:hover {
-        background: var(--accent-light);
-        transform: translateY(-2px);
-    }
-
-    .button-secondary {
-        background: rgba(255, 255, 255, 0.035);
-        border: 1px solid var(--border);
-        color: #e5e7eb;
-    }
-
-    .button-secondary:hover {
-        background: rgba(255, 255, 255, 0.07);
-        transform: translateY(-2px);
-    }
-
-    /* Info Section */
-
-    .info-section {
-        padding: 20px 0 100px;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 38px;
-    }
-
-    .section-header h2 {
-        font-size: 1.9rem;
-        letter-spacing: -1px;
-        margin-bottom: 9px;
-    }
-
-    .section-header p {
-        color: var(--muted);
-        font-size: 0.92rem;
-    }
-
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-
-    .card {
-        padding: 28px;
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        background: var(--card);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(124, 92, 255, 0.28);
-    }
-
-    .card-icon {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 20px;
-        border-radius: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(124, 92, 255, 0.1);
-        border: 1px solid rgba(124, 92, 255, 0.16);
-        color: #a99aff;
-        font-size: 20px;
-    }
-
-    .card h3 {
-        font-size: 1rem;
-        margin-bottom: 9px;
-    }
-
-    .card p {
-        color: var(--muted);
-        font-size: 0.86rem;
-        line-height: 1.7;
-    }
-
-    /* Developer Section */
-
-    .developer {
-        padding: 0 0 100px;
-    }
-
-    .developer-box {
-        padding: 42px;
-        border-radius: 24px;
-        border: 1px solid var(--border);
-        background:
-            linear-gradient(
-                135deg,
-                rgba(124, 92, 255, 0.09),
-                rgba(255, 255, 255, 0.025)
-            );
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 30px;
-    }
-
-    .developer-text h2 {
-        font-size: 1.55rem;
-        margin-bottom: 9px;
-    }
-
-    .developer-text p {
-        color: var(--muted);
-        font-size: 0.9rem;
-        max-width: 650px;
-    }
-
-    .android-label {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 17px;
-        border-radius: 12px;
-        background: rgba(61, 220, 132, 0.07);
-        border: 1px solid rgba(61, 220, 132, 0.16);
-        color: #7de8a8;
-        font-size: 0.82rem;
-        font-weight: 600;
-    }
-
-    .android-symbol {
-        font-size: 18px;
-    }
-
-    /* Footer */
-
-    footer {
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        background: rgba(0, 0, 0, 0.18);
-    }
-
-    .footer-inner {
-        max-width: 1100px;
-        margin: auto;
-        padding: 28px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-    }
-
-    .copyright {
-        color: #6f737d;
-        font-size: 0.78rem;
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 20px;
-    }
-
-    .footer-links a {
-        color: #858995;
-        text-decoration: none;
-        font-size: 0.78rem;
-        transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-        color: white;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 760px) {
-
-        .nav {
-            height: 64px;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .nav-links {
-            gap: 16px;
+        :root {
+            --bg: #090b10;
+            --bg-secondary: #0e1118;
+            --card: rgba(255, 255, 255, 0.045);
+            --border: rgba(255, 255, 255, 0.09);
+            --text: #f5f7fa;
+            --muted: #969daa;
+            --accent: #7c5cff;
+            --accent-light: #a18aff;
+            --green: #3ddc84;
         }
 
-        .nav-links a {
-            font-size: 0.78rem;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .hero {
-            min-height: auto;
+        body {
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(124, 92, 255, 0.22),
+                    transparent 42%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(61, 220, 132, 0.06),
+                    transparent 35%
+                ),
+                var(--bg);
+            line-height: 1.6;
         }
 
-        .hero-content {
-            padding: 90px 0 80px;
+        a {
+            color: inherit;
         }
 
-        h1 {
-            font-size: clamp(3rem, 16vw, 4.5rem);
-            letter-spacing: -3px;
-        }
+        /* Header */
 
-        .hero-description {
-            font-size: 0.95rem;
-        }
-
-        .cards {
-            grid-template-columns: 1fr;
-        }
-
-        .developer-box {
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 30px;
-        }
-
-        .footer-inner {
-            flex-direction: column;
-            text-align: center;
-        }
-    }
-
-    @media (max-width: 480px) {
-
-        main {
-            padding: 0 18px;
+        header {
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(9, 11, 16, 0.72);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
 
         .nav {
-            padding: 0 18px;
+            max-width: 1100px;
+            margin: auto;
+            height: 72px;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .brand {
-            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
         }
 
-        .nav-links a:first-child {
-            display: none;
+        .brand-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(135deg, #7c5cff, #5540d9);
+            box-shadow: 0 7px 25px rgba(124, 92, 255, 0.25);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* Main */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
         }
 
         .hero-content {
-            padding-top: 70px;
+            max-width: 850px;
+            padding: 80px 0;
         }
 
         .badge {
-            font-size: 0.7rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 50px;
+            background: rgba(124, 92, 255, 0.09);
+            border: 1px solid rgba(124, 92, 255, 0.22);
+            color: #b9adff;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 12px rgba(61, 220, 132, 0.7);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            font-weight: 800;
+            margin-bottom: 26px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                135deg,
+                #ffffff 15%,
+                #a18aff 55%,
+                #7c5cff 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            max-width: 620px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.8;
         }
 
         .hero-buttons {
-            flex-direction: column;
+            margin-top: 34px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .button {
-            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 13px 21px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
 
-        .info-section,
+        .button-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 30px rgba(124, 92, 255, 0.2);
+        }
+
+        .button-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.035);
+            border: 1px solid var(--border);
+            color: #e5e7eb;
+        }
+
+        .button-secondary:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-2px);
+        }
+
+        /* Info Section */
+
+        .info-section {
+            padding: 20px 0 100px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-header h2 {
+            font-size: 1.9rem;
+            letter-spacing: -1px;
+            margin-bottom: 9px;
+        }
+
+        .section-header p {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--card);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(124, 92, 255, 0.28);
+        }
+
+        .card-icon {
+            width: 46px;
+            height: 46px;
+            margin-bottom: 20px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(124, 92, 255, 0.1);
+            border: 1px solid rgba(124, 92, 255, 0.16);
+            color: #a99aff;
+            font-size: 20px;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 9px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.86rem;
+            line-height: 1.7;
+        }
+
+        /* Developer Section */
+
         .developer {
-            padding-bottom: 70px;
+            padding: 0 0 100px;
         }
-    }
-</style>
 
+        .developer-box {
+            padding: 42px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124, 92, 255, 0.09),
+                    rgba(255, 255, 255, 0.025)
+                );
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
 
+        .developer-text h2 {
+            font-size: 1.55rem;
+            margin-bottom: 9px;
+        }
+
+        .developer-text p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            max-width: 650px;
+        }
+
+        .android-label {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 17px;
+            border-radius: 12px;
+            background: rgba(61, 220, 132, 0.07);
+            border: 1px solid rgba(61, 220, 132, 0.16);
+            color: #7de8a8;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .android-symbol {
+            font-size: 18px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 28px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #6f737d;
+            font-size: 0.78rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #858995;
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 760px) {
+            .nav {
+                height: 64px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 0.78rem;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 90px 0 80px;
+            }
+
+            h1 {
+                font-size: clamp(2.2rem, 12vw, 3.5rem);
+                letter-spacing: -1.5px;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .developer-box {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 30px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 0 18px;
+            }
+
+            .nav {
+                padding: 0 18px;
+            }
+
+            .brand {
+                font-size: 0.95rem;
+            }
+
+            .nav-links a:first-child {
+                display: none;
+            }
+
+            .hero-content {
+                padding-top: 70px;
+            }
+
+            .badge {
+                font-size: 0.7rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .info-section,
+            .developer {
+                padding-bottom: 70px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
     <nav class="nav">
-
-
-    <a href="#" class="brand">
-        <span class="brand-icon">LKY</span>
-        <span>LKY Studio</span>
-    </a>
-
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a
-            href="https://sites.google.com/view/privacypolicy-of-tuancuong/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Privacy Policy
+        <a href="#" class="brand">
+            <span class="brand-icon">LKY</span>
+            <span>LKY Studio</span>
         </a>
-    </div>
 
-</nav>
-
-
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <!-- Đã cập nhật link Privacy Policy chuẩn GitHub Pages -->
+            <a href="https://thily1509.github.io/privacy.html">
+                Privacy Policy
+            </a>
+        </div>
+    </nav>
 </header>
 
 <main>
 
-
 <!-- Hero -->
-
 <section class="hero">
-
     <div class="hero-content">
-
         <div class="badge">
             <span class="badge-dot"></span>
-            Android App Developer
+            Featured Android Application
         </div>
 
+        <!-- Tiêu đề chính chứa chính xác tên App để Google Verified -->
         <h1>
-            <span class="gradient-text">LKY Studio</span>
+            <span class="gradient-text">AI Clean Up: Smart Storage</span>
         </h1>
 
         <p class="hero-description">
-            We create simple, useful, and enjoyable Android applications
-            designed to make everyday experiences better.
-            Our apps are available on Google Play.
+            Clean up your device storage efficiently with AI assistance. 
+            Designed and developed by <strong>LKY Studio</strong> to make your mobile experience faster and smoother. Available now on Google Play.
         </p>
 
         <div class="hero-buttons">
-
             <a
                 href="https://play.google.com/store/apps/developer?id=LKY+Studio"
                 target="_blank"
@@ -549,143 +531,90 @@
                 ▶ &nbsp; Google Play
             </a>
 
+            <!-- Đã cập nhật link Privacy Policy -->
             <a
-                href="https://sites.google.com/view/privacypolicy-of-tuancuong/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://thily1509.github.io/privacy.html"
                 class="button button-secondary"
             >
                 Privacy Policy
             </a>
-
         </div>
-
     </div>
-
 </section>
-
 
 <!-- About -->
-
 <section class="info-section" id="about">
-
     <div class="section-header">
-
-        <h2>About LKY Studio</h2>
-
+        <h2>About AI Clean Up: Smart Storage</h2>
         <p>
-            Focused on building practical and user-friendly Android apps.
+            Focused on building practical, smart, and user-friendly Android apps.
         </p>
-
     </div>
-
 
     <div class="cards">
-
         <div class="card">
-
             <div class="card-icon">◈</div>
-
-            <h3>Simple & Useful</h3>
-
+            <h3>Smart Cleaning</h3>
             <p>
-                We focus on creating applications that are easy to
-                understand, simple to use, and useful in everyday life.
+                Intelligent storage management that helps you identify and clean redundant files effortlessly.
             </p>
-
         </div>
 
-
         <div class="card">
-
             <div class="card-icon">◆</div>
-
-            <h3>Android Development</h3>
-
+            <h3>Android Optimization</h3>
             <p>
-                LKY Studio develops mobile applications for Android
-                users and publishes them through Google Play.
+                Engineered for performance and smooth operation across various Android devices.
             </p>
-
         </div>
-
 
         <div class="card">
-
             <div class="card-icon">✓</div>
-
-            <h3>User Experience</h3>
-
+            <h3>User Privacy</h3>
             <p>
-                We aim to provide clean interfaces, smooth experiences,
-                and reliable functionality across our applications.
+                We prioritize user privacy and security, ensuring clean interfaces without invasive tracking.
             </p>
-
         </div>
-
     </div>
-
 </section>
 
-
 <!-- Developer -->
-
 <section class="developer">
-
     <div class="developer-box">
-
         <div class="developer-text">
-
             <h2>LKY Studio</h2>
-
             <p>
                 Independent Android app developer focused on delivering
-                quality mobile applications to users around the world
-                through Google Play.
+                quality mobile applications like <strong>AI Clean Up: Smart Storage</strong> to users around the world.
             </p>
-
         </div>
 
         <div class="android-label">
             <span class="android-symbol">●</span>
             Android Developer
         </div>
-
     </div>
-
 </section>
-
 
 </main>
 
 <footer>
+    <div class="footer-inner">
+        <div class="copyright">
+            © 2026 LKY Studio. All rights reserved.
+        </div>
 
+        <div class="footer-links">
+            <!-- Đã cập nhật link Privacy Policy -->
+            <a href="https://thily1509.github.io/privacy.html">
+                Privacy Policy
+            </a>
 
-<div class="footer-inner">
-
-    <div class="copyright">
-        © 2026 LKY Studio. All rights reserved.
+            <a href="#about">
+                About
+            </a>
+        </div>
     </div>
-
-    <div class="footer-links">
-
-        <a
-            href="https://sites.google.com/view/privacypolicy-of-tuancuong/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Privacy Policy
-        </a>
-
-        <a href="#about">
-            About
-        </a>
-
-    </div>
-
-</div>
-
-
 </footer>
 
 </body>
