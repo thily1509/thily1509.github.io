@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta name="description" content="Privacy Policy for LKY Studio mobile applications.">
+
+<meta name="theme-color" content="#090b10">
+
+<title>Privacy Policy | LKY Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --bg: #090b10;
+        --bg-secondary: #0e1118;
+        --card: rgba(255, 255, 255, 0.045);
+        --border: rgba(255, 255, 255, 0.09);
+        --text: #f5f7fa;
+        --muted: #9a9faa;
+        --accent: #7c5cff;
+        --accent-light: #a18aff;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+
+        background:
+            radial-gradient(
+                circle at 50% -10%,
+                rgba(124, 92, 255, 0.18),
+                transparent 40%
+            ),
+            var(--bg);
+
+        line-height: 1.75;
+    }
+
+    a {
+        color: var(--accent-light);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    /* Header */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        width: 100%;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+        background: rgba(9, 11, 16, 0.78);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+        max-width: 1000px;
+        height: 70px;
+        margin: auto;
+        padding: 0 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+
+        color: white;
+        text-decoration: none;
+
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .brand:hover {
+        text-decoration: none;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 11px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        font-size: 14px;
+        font-weight: 800;
+
+        background:
+            linear-gradient(
+                135deg,
+                #7c5cff,
+                #5540d9
+            );
+
+        box-shadow:
+            0 7px 25px rgba(124, 92, 255, 0.25);
+    }
+
+    .back-link {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 500;
+    }
+
+    .back-link:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Main */
+
+    main {
+        max-width: 900px;
+        margin: auto;
+        padding: 70px 24px 100px;
+    }
+
+    .hero {
+        text-align: center;
+        margin-bottom: 55px;
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+
+        padding: 7px 13px;
+
+        border-radius: 50px;
+
+        background: rgba(124, 92, 255, 0.08);
+        border: 1px solid rgba(124, 92, 255, 0.2);
+
+        color: #b8acff;
+
+        font-size: 0.75rem;
+        font-weight: 600;
+
+        margin-bottom: 22px;
+    }
+
+    .badge-dot {
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: #7c5cff;
+
+        box-shadow:
+            0 0 12px rgba(124, 92, 255, 0.7);
+    }
+
+    h1 {
+        font-size: clamp(2.4rem, 7vw, 4rem);
+        line-height: 1.05;
+
+        letter-spacing: -2.5px;
+
+        font-weight: 800;
+
+        margin-bottom: 18px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffffff 15%,
+                #a18aff 55%,
+                #7c5cff 100%
+            );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+        max-width: 600px;
+        margin: auto;
+
+        color: var(--muted);
+
+        font-size: 0.95rem;
+    }
+
+    /* Policy Container */
+
+    .policy {
+        padding: 42px;
+
+        background: var(--card);
+
+        border: 1px solid var(--border);
+
+        border-radius: 24px;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        box-shadow:
+            0 25px 70px rgba(0, 0, 0, 0.2);
+    }
+
+    .updated {
+        display: inline-block;
+
+        margin-bottom: 32px;
+
+        padding: 7px 11px;
+
+        border-radius: 8px;
+
+        background: rgba(255, 255, 255, 0.04);
+
+        color: #777d88;
+
+        font-size: 0.72rem;
+    }
+
+    .policy h2 {
+        margin-top: 42px;
+        margin-bottom: 12px;
+
+        color: #ffffff;
+
+        font-size: 1.25rem;
+        line-height: 1.4;
+
+        letter-spacing: -0.3px;
+    }
+
+    .policy h2:first-of-type {
+        margin-top: 0;
+    }
+
+    .policy p {
+        margin-bottom: 15px;
+
+        color: #aeb2bc;
+
+        font-size: 0.9rem;
+        line-height: 1.8;
+    }
+
+    .policy ul {
+        margin: 10px 0 18px 22px;
+    }
+
+    .policy li {
+        margin-bottom: 7px;
+
+        color: #aeb2bc;
+
+        font-size: 0.9rem;
+    }
+
+    .service-list {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin: 20px 0 28px;
+    }
+
+    .service {
+        padding: 13px 16px;
+
+        border-radius: 11px;
+
+        background: rgba(255, 255, 255, 0.035);
+
+        border: 1px solid rgba(255, 255, 255, 0.06);
+
+        color: #c2c6cf;
+
+        font-size: 0.82rem;
+    }
+
+    .service::before {
+        content: "•";
+
+        color: var(--accent-light);
+
+        margin-right: 9px;
+    }
+
+    .contact-box {
+        margin-top: 25px;
+
+        padding: 22px;
+
+        border-radius: 15px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(124, 92, 255, 0.1),
+                rgba(255, 255, 255, 0.025)
+            );
+
+        border: 1px solid rgba(124, 92, 255, 0.15);
+    }
+
+    .contact-box p {
+        margin: 0;
+    }
+
+    .contact-email {
+        display: inline-block;
+
+        margin-top: 4px;
+
+        font-weight: 600;
+        color: #b3a5ff;
+    }
+
+    /* Footer */
+
+    footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+        background: rgba(0, 0, 0, 0.18);
+    }
+
+    .footer-inner {
+        max-width: 900px;
+        margin: auto;
+
+        padding: 28px 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 20px;
+    }
+
+    .copyright {
+        color: #6f737d;
+        font-size: 0.76rem;
+    }
+
+    .footer-link {
+        color: #858995;
+        font-size: 0.76rem;
+    }
+
+    .footer-link:hover {
+        color: white;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 650px) {
+
+        .nav {
+            height: 64px;
+            padding: 0 18px;
+        }
+
+        .back-link {
+            display: none;
+        }
+
+        main {
+            padding: 55px 16px 70px;
+        }
+
+        .hero {
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            letter-spacing: -1.8px;
+        }
+
+        .hero-description {
+            font-size: 0.88rem;
+        }
+
+        .policy {
+            padding: 27px 21px;
+            border-radius: 19px;
+        }
+
+        .policy h2 {
+            font-size: 1.12rem;
+            margin-top: 34px;
+        }
+
+        .policy p,
+        .policy li {
+            font-size: 0.86rem;
+        }
+
+        .service-list {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-inner {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<header>
+
+
+<nav class="nav">
+
+    <a href="#" class="brand">
+
+        <span class="brand-icon">
+            LKY
+        </span>
+
+        <span>
+            LKY Studio
+        </span>
+
+    </a>
+
+    <a
+        href="#privacy"
+        class="back-link"
+    >
+        Privacy Policy
+    </a>
+
+</nav>
+
+
+</header>
+
+<main id="privacy">
+
+
+<!-- Header -->
+
+<section class="hero">
+
+    <div class="badge">
+        <span class="badge-dot"></span>
+        LKY Studio
+    </div>
+
+    <h1>
+        Privacy Policy
+    </h1>
+
+    <p class="hero-description">
+        This Privacy Policy explains how LKY Studio handles
+        information when you use our mobile applications.
+    </p>
+
+</section>
+
+
+<!-- Privacy Policy -->
+
+<article class="policy">
+
+    <span class="updated">
+        Privacy Policy
+    </span>
+
+
+    <h2>
+        Introduction
+    </h2>
+
+    <p>
+        LKY Studio built the app as a Free mobile game.
+        This SERVICE is provided by Store at no cost and
+        is intended for use as is.
+    </p>
+
+    <p>
+        This page is used to inform visitors regarding our
+        policies with the collection, use, and disclosure of
+        Personal Information if anyone decided to use our Service.
+    </p>
+
+    <p>
+        If you choose to use our Service, then you agree to
+        the collection and use of information in relation to
+        this policy. The Personal Information that we collect
+        is used for providing and improving the Service.
+        We will not use or share your information with anyone
+        except as described in this Privacy Policy.
+    </p>
+
+    <p>
+        The terms used in this Privacy Policy have the same
+        meanings as in our Terms and Conditions, which is
+        accessible at game unless otherwise defined in this
+        Privacy Policy.
+    </p>
+
+
+    <h2>
+        Information Collection and Use
+    </h2>
+
+    <p>
+        For a better experience, while using our Service,
+        we may require you to provide us with certain
+        personally identifiable information. The information
+        that we request will be retained by us and used as
+        described in this privacy policy.
+    </p>
+
+    <p>
+        The app does use third party services that may collect
+        information used to identify you.
+    </p>
+
+    <p>
+        Link to privacy policy of third party service
+        providers used by the app:
+    </p>
+
+
+    <div class="service-list">
+
+        <div class="service">
+            Google Play Services
+        </div>
+
+        <div class="service">
+            AdMob
+        </div>
+
+        <div class="service">
+            Firebase Crashlytics
+        </div>
+
+        <div class="service">
+            Facebook
+        </div>
+
+        <div class="service">
+            Unity
+        </div>
+
+        <div class="service">
+            AppLovin
+        </div>
+
+    </div>
+
+
+    <h2>
+        Log Data
+    </h2>
+
+    <p>
+        We want to inform you that whenever you use our
+        Service, in a case of an error in the app we collect
+        data and information (through third party products)
+        on your phone called Log Data.
+    </p>
+
+    <p>
+        This Log Data may include information such as your
+        device Internet Protocol (“IP”) address, device name,
+        operating system version, the configuration of the app
+        when utilizing our Service, the time and date of your
+        use of the Service, and other statistics.
+    </p>
+
+
+    <h2>
+        Cookies
+    </h2>
+
+    <p>
+        Cookies are files with a small amount of data that are
+        commonly used as anonymous unique identifiers.
+        These are sent to your browser from the websites that
+        you visit and are stored on your device's internal memory.
+    </p>
+
+    <p>
+        This Service does not use these “cookies” explicitly.
+        However, the app may use third party code and libraries
+        that use “cookies” to collect information and improve
+        their services.
+    </p>
+
+    <p>
+        You have the option to either accept or refuse these
+        cookies and know when a cookie is being sent to your
+        device. If you choose to refuse our cookies, you may
+        not be able to use some portions of this Service.
+    </p>
+
+
+    <h2>
+        Service Providers
+    </h2>
+
+    <p>
+        We may employ third-party companies and individuals
+        due to the following reasons:
+    </p>
+
+    <ul>
+        <li>To facilitate our Service;</li>
+        <li>To provide the Service on our behalf;</li>
+        <li>To perform Service-related services; or</li>
+        <li>To assist us in analyzing how our Service is used.</li>
+    </ul>
+
+    <p>
+        We want to inform users of this Service that these
+        third parties have access to your Personal Information.
+        The reason is to perform the tasks assigned to them on
+        our behalf. However, they are obligated not to disclose
+        or use the information for any other purpose.
+    </p>
+
+
+    <h2>
+        Security
+    </h2>
+
+    <p>
+        We value your trust in providing us your Personal
+        Information, thus we are striving to use commercially
+        acceptable means of protecting it.
+    </p>
+
+    <p>
+        But remember that no method of transmission over the
+        internet, or method of electronic storage is 100%
+        secure and reliable, and we cannot guarantee its
+        absolute security.
+    </p>
+
+
+    <h2>
+        Links to Other Sites
+    </h2>
+
+    <p>
+        This Service may contain links to other sites.
+        If you click on a third-party link, you will be
+        directed to that site.
+    </p>
+
+    <p>
+        Note that these external sites are not operated by us.
+        Therefore, we strongly advise you to review the Privacy
+        Policy of these websites.
+    </p>
+
+    <p>
+        We have no control over and assume no responsibility
+        for the content, privacy policies, or practices of any
+        third-party sites or services.
+    </p>
+
+
+    <h2>
+        Children’s Privacy
+    </h2>
+
+    <p>
+        These Services do not address anyone under the age of
+        13. We do not knowingly collect personally identifiable
+        information from children under 13 years of age.
+    </p>
+
+    <p>
+        In the case we discover that a child under 13 has
+        provided us with personal information, we immediately
+        delete this from our servers.
+    </p>
+
+    <p>
+        If you are a parent or guardian and you are aware that
+        your child has provided us with personal information,
+        please contact us so that we will be able to do
+        necessary actions.
+    </p>
+
+
+    <h2>
+        Changes to This Privacy Policy
+    </h2>
+
+    <p>
+        We may update our Privacy Policy from time to time.
+        Thus, you are advised to review this page periodically
+        for any changes.
+    </p>
+
+    <p>
+        We will notify you of any changes by posting the new
+        Privacy Policy on this page.
+    </p>
+
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <p>
+        If you have any questions or suggestions about our
+        Privacy Policy, do not hesitate to contact us.
+    </p>
+
+
+    <div class="contact-box">
+
+        <p>
+            Contact email:
+        </p>
+
+        <a
+            class="contact-email"
+            href="mailto:thily1509@outlook.com.vn"
+        >
+            thily1509@outlook.com.vn
+        </a>
+
+    </div>
+
+</article>
+
+
+</main>
+
+<footer>
+
+
+<div class="footer-inner">
+
+    <div class="copyright">
+        © 2026 LKY Studio. All rights reserved.
+    </div>
+
+    <a
+        href="#privacy"
+        class="footer-link"
+    >
+        Privacy Policy
+    </a>
+
+</div>
+
+
+</footer>
+
+</body>
+</html>
